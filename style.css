@@ -42,7 +42,10 @@ nav{
     width: 100%;
 }
 
-
+.perso{
+    width: 50px;
+    height: auto;
+}
 .navbar{
     
    font-size: 1.5rem;
