@@ -1,0 +1,57 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    background-image: url(images/3-34276_bloody-moon.jpg);
+    font-family: 'Reggae One', cursive;
+}
+
+
+.title{
+    text-align: center;
+    color: antiquewhite;
+    font-size: 7em;
+    text-shadow: 2px 2px 2px black;
+    margin-top: 100px;
+
+}
+
+.classic{
+    width: 323px;
+    height: 156px;
+    margin-left: 30%;
+    margin-top: 100px;
+    margin-bottom: 200px;
+    margin-right: 50px;
+    box-shadow: 15px 15px 5px rgb(94, 74, 74);
+}
+
+.retail{
+    width: 323px;
+    height: 156px;
+    margin-top: 100px;
+    margin-bottom: 200px;
+    margin-left: 50px;
+    box-shadow: 15px 15px 5px rgb(94, 74, 74);
+
+}
+
+
+nav{
+    width: 100%;
+}
+
+
+.navbar{
+    
+   font-size: 1.5rem;
+   text-align: center;
+   margin-top: 200px;
+   
+}
+.nav-link{
+    border: 0.5px gray ;
+    margin: 20px;
+    padding: 15px;
+}
