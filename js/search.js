@@ -1,8 +1,8 @@
 // Supposons que vous ayez une variable "content" qui contient vos données indexées
 var content = [
     {
-      title: "Titre 1",
-      content: "Contenu 1"
+      title: "s'inscrire",
+      content: "s'inscrire"
     },
     {
       title: "Titre 2",
@@ -59,6 +59,4 @@ var content = [
   });
   
   // Construisez l'index de recherche au chargement de la page
-  buildSearchIndex();
-  
-  
+  buildSearchIndex();  
