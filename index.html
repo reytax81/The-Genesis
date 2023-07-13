@@ -57,59 +57,10 @@
             </li>
         </ul>
         <form id="search-form" class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="text" id="search-input" placeholder="Search">
+            <input class="form-control mr-sm-2" type="text" id="search-input" placeholder="recherche">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
         <ul id="search-results"></ul>
-        <script>
-            // Supposons que vous ayez une variable "content" qui contient vos données indexées
-
-            function performSearch(query) {
-                var results = [];
-    
-    // Parcourez votre contenu indexé et recherchez des correspondances avec la requête de recherche
-                for (var i = 0; i < content.length; i++) {
-                    var item = content[i];
-        
-        // Exemple de recherche dans le titre et le contenu de l'élément
-                    if (item.title.toLowerCase().includes(query.toLowerCase()) || item.content.toLowerCase().includes(query.toLowerCase())) {
-            results.push(item);
-        }
-    }
-    
-    // Traitez les résultats de recherche (par exemple, affichez-les dans une liste)
-                displaySearchResults(results);
-}
-
-            function displaySearchResults(results) {
-    // Affichez les résultats de recherche dans l'interface utilisateur
-    // Par exemple, ajoutez les résultats à une liste dans votre page HTML
-                var resultList = document.getElementById('search-results');
-                resultList.innerHTML = ''; // Effacez les résultats précédents
-    
-                if (results.length === 0) {
-                    var noResultsItem = document.createElement('li');
-                    noResultsItem.textContent = 'Aucun résultat trouvé.';
-                    resultList.appendChild(noResultsItem);
-                } else {
-                    for (var i = 0; i < results.length; i++) {
-                        var resultItem = document.createElement('li');
-                        resultItem.textContent = results[i].title;
-                        resultList.appendChild(resultItem);
-                    }
-                }
-}
-
-// Récupérez la zone de recherche par son ID
-            var searchForm = document.getElementById('search-form');
-
-// Ajoutez un écouteur d'événement pour déclencher la recherche lorsque le formulaire est soumis
-            searchForm.addEventListener('submit', function(event) {
-                event.preventDefault();
-                var query = document.getElementById('search-input').value;
-                performSearch(query);
-            });
-        </script>
     </div>
 </nav>
 </header>
@@ -130,9 +81,66 @@
 
 
 <script src="js/index.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Inclusion des fichiers CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<!-- Inclusion des fichiers JavaScript -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Inclusion de Vue.js -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+<!-- Inclusion de React -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.2/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.2/umd/react-dom.production.min.js"></script>
+<!-- Inclusion de Lodash -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+<script>
+    // Supposons que vous ayez une variable "content" qui contient vos données indexées
+
+    function performSearch(query) {
+        var results = [];
+        // Parcourez votre contenu indexé et recherchez des correspondances avec la requête de recherche
+        for (var i = 0; i < content.length; i++) {
+            var item = content[i];
+
+            // Exemple de recherche dans le titre et le contenu de l'élément
+            if (item.title.toLowerCase().includes(query.toLowerCase()) || item.content.toLowerCase().includes(query.toLowerCase())) {
+                results.push(item);
+            }
+        }
+
+        // Traitez les résultats de recherche (par exemple, affichez-les dans une liste)
+        displaySearchResults(results);
+    }
+
+    function displaySearchResults(results) {
+        // Affichez les résultats de recherche dans l'interface utilisateur
+        // Par exemple, ajoutez les résultats à une liste dans votre page HTML
+        var resultList = document.getElementById('search-results');
+        resultList.innerHTML = ''; // Effacez les résultats précédents
+
+        if (results.length === 0) {
+            var noResultsItem = document.createElement('li');
+            noResultsItem.textContent = 'Aucun résultat trouvé.';
+            resultList.appendChild(noResultsItem);
+        } else {
+            for (var i = 0; i < results.length; i++) {
+                var resultItem = document.createElement('li');
+                resultItem.textContent = results[i].title;
+                resultList.appendChild(resultItem);
+            }
+        }
+    }
+
+    var searchForm = document.getElementById('search-form');
+    searchForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        var query = document.getElementById('search-input').value;
+        performSearch(query);
+    });
+</script>
 
 </body>
 </html>
