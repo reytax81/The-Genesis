@@ -5,7 +5,7 @@ $email = $_POST['email'];
 $message = $_POST['message'];
 
 // Adresse e-mail de destination
-$to = 'yann.radureau@gmail.com';
+$to = '*****************';
 
 // Sujet de l'e-mail
 $subject = 'Nouveau message du formulaire de contact';
