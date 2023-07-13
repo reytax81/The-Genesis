@@ -17,6 +17,15 @@ body{
 
 }
 
+h2{
+    text-align: center;
+    color: antiquewhite;
+    font-size: 2em;
+    text-shadow: 2px 2px 2px black;
+    margin-top: 100px;
+}
+
+
 .classic{
     width: 323px;
     height: 156px;
